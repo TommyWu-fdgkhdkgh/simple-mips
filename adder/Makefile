@@ -4,3 +4,4 @@ half_adder_testbench: half_adder.v half_adder_testbench.v
 
 clean:
 	rm -f half_adder_testbench
+	rm -f waveform.vcd
