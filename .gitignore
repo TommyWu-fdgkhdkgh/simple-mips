@@ -1,0 +1,3 @@
+iverilog/
+install_iverilog/
+*.vcd
