@@ -19,6 +19,10 @@ run/half_adder_testbench:
 run/full_adder_testbench:
 	cd adder && make full_adder_testbench
 
+.PHONY: run/full_adder_32_testbench
+run/full_adder_32_testbench:
+	cd adder && make full_adder_32_testbench
+
 .PHONY: clean
 clean:
 	cd adder && make clean
