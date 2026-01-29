@@ -23,6 +23,15 @@ run/full_adder_testbench:
 run/full_adder_32_testbench:
 	cd adder && make full_adder_32_testbench
 
+.PHONY: run/mux_2to1_testbench
+run/mux_2to1_testbench:
+	cd mux && make mux_2to1_testbench
+
+.PHONY: run/mux_4to1_testbench
+run/mux_4to1_testbench:
+	cd mux && make mux_4to1_testbench
+
 .PHONY: clean
 clean:
 	cd adder && make clean
+	cd mux && make clean
