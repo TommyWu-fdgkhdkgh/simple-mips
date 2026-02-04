@@ -27,6 +27,7 @@ wire [31:0] id_ex_sign_extend;
 wire [14:0] id_ex_decoder_signals;
 ///////////
 // EX
+wire [31:0] ex_forward_regfile_2;
 wire [4:0] ex_regdst;
 wire [31:0] ex_branch_adder, ex_alu_result;
 wire ex_alu_zero;
@@ -156,6 +157,7 @@ Execute execute (
   .forward_mem_to_regfile_i(wb_to_regfile),
   .forward_1_i(fu_forward_1),
   .forward_2_i(fu_forward_2),
+  .forward_regfile_2_o(ex_forward_regfile_2),
 
   .d_alusrc_i(id_ex_decoder_signals[2:2]),
 
@@ -180,7 +182,7 @@ Pipeline_Reg_EX_MEM pipeline_reg_ex_mem (
   .keep_i(1'b0),
   .clear_i(flush_ex_mem),
 
-  .regfile_2_i(id_ex_regfile_2),
+  .regfile_2_i(ex_forward_regfile_2),
   .regfile_2_o(ex_mem_regfile_2),
 
   .decoder_signals_i(
