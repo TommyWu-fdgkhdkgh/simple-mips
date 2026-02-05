@@ -8,6 +8,7 @@ module Inst_Mem (
 input [31:0] pc_addr_i;
 output [31:0] inst_o;
 
+// 一個 32 bits 的陣列，該陣列總共有 32 個元素
 reg [31:0] memory [0:31];
 
 // pc_addr_i[31:2] == (pc_addr_i / 4)

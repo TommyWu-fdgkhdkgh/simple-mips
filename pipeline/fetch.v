@@ -4,9 +4,6 @@ module Fetch(
   clk_i,
   rst_i,
 
-  /*
-   * XXX 
-   */
   mux_pc_i,
   mux_pc_sel_i,
   stall_i,
@@ -30,7 +27,7 @@ wire [31:0] pc_adder;
 Mux_2to1 #(.size(32)) mux_two_pc(pc_adder, mux_pc_i,
                                  mux_pc_sel_i, mux_pc);
 
-// pc_o 是這個 cycle 的 pc 值
+// pc 是這個 cycle 的 pc 值
 // mux_pc 是 `下一 cycle` 的 pc 值
 Program_Counter program_counter(clk_i, rst_i, stall_i, mux_pc, pc);
 
