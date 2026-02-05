@@ -108,7 +108,7 @@ Decode decode (
 Pipeline_Reg_ID_EX pipeline_reg_id_ex (
   .clk_i(clk_i), .rst_i(rst_i),
   .keep_i(1'b0),
-  .clear_i(stall_if_id || flush_id_ex),
+  .clear_i(hz_stall_if_id || hz_flush_id_ex),
   .rs_o(id_ex_rs),
   .rt_o(id_ex_rt),
 
@@ -180,7 +180,7 @@ Execute execute (
 Pipeline_Reg_EX_MEM pipeline_reg_ex_mem (
   .clk_i(clk_i), .rst_i(rst_i),
   .keep_i(1'b0),
-  .clear_i(flush_ex_mem),
+  .clear_i(hz_flush_ex_mem),
 
   .regfile_2_i(ex_forward_regfile_2),
   .regfile_2_o(ex_mem_regfile_2),

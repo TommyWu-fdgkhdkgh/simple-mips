@@ -10,6 +10,9 @@ input [5:0] funct_i;
 input [5:0] ALUOp_i;
 output [3:0] ALUCtrl_o;
 
+// ALUCtrl_o 會交給 alu, 讓 alu 做出相對應的動作
+// 這邊整理出, 哪些 instruction 需要 assert 哪幾個 ALUCtrl_o bit
+
 assign ALUCtrl_o[3] = ((ALUOp_i == 6'b000000) && (funct_i == 6'b011000));  // mult
 assign ALUCtrl_o[2] = ((ALUOp_i == 6'b000000) && (funct_i == 6'b100010)) | // sub
 	              ((ALUOp_i == 6'b000000) && (funct_i == 6'b101010)) | // slt
